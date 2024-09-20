@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "scene.h"
 #include "scene_manager.h"
@@ -16,30 +16,30 @@ public:
 
 	virtual void on_enter() 
 	{
-		cout << "½øÈëÖ÷²Ëµ¥" << endl;
-	} //³¡¾°½øÈëÊ±µÄ³õÊ¼»¯Âß¼­
+		cout << "è¿›å…¥ä¸»èœå•" << endl;
+	} //åœºæ™¯è¿›å…¥æ—¶çš„åˆå§‹åŒ–é€»è¾‘
 
 	virtual void on_update() 
 	{
-		cout << "Ö÷²Ëµ¥ÕýÔÚÔËÐÐ¡­" << endl;
-	}//´¦ÀíÊý¾Ý
+		cout << "ä¸»èœå•æ­£åœ¨è¿è¡Œâ€¦" << endl;
+	}//å¤„ç†æ•°æ®
 
 	virtual void on_draw() 
 	{
-		outtextxy(10, 10, _T("Ö÷²Ëµ¥»æÍ¼ÄÚÈÝ"));
-	} //äÖÈ¾»æÍ¼
+		outtextxy(10, 10, _T("ä¸»èœå•ç»˜å›¾å†…å®¹"));
+	} //æ¸²æŸ“ç»˜å›¾
 
 	virtual void on_input(const ExMessage& msg) 
 	{
 		if (msg.message == WM_KEYDOWN) {
 			scene_manager.switch_to(SceneManager::SceneType::Game);
 		}
-	}//´¦ÀíÍæ¼ÒÊäÈë
+	}//å¤„ç†çŽ©å®¶è¾“å…¥
 	
-	virtual void on_exit()  //³¡¾°ÍË³öÊ±µÄÐ¶ÔØÂß¼­
+	virtual void on_exit()  //åœºæ™¯é€€å‡ºæ—¶çš„å¸è½½é€»è¾‘
 	{
-		cout << "Ö÷²Ëµ¥ÍË³ö" << endl;
+		cout << "é€€å‡ºä¸»èœå•" << endl;
 	}
 private:
-
+	
 };

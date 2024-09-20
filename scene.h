@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <graphics.h>
 
 class Scene 
@@ -7,11 +7,11 @@ public:
 	Scene() = default;
 	~Scene() = default;
 
-	virtual void on_enter() {} //³¡¾°½øÈëÊ±µÄ³õÊ¼»¯Âß¼­
-	virtual void on_update() {} //´¦ÀíÊı¾İ
-	virtual void on_draw() {} //äÖÈ¾»æÍ¼
-	virtual void on_input(const ExMessage& msg) {} //´¦ÀíÍæ¼ÒÊäÈë
-	virtual void on_exit() {} //³¡¾°ÍË³öÊ±µÄĞ¶ÔØÂß¼­
+	virtual void on_enter() {} //åœºæ™¯è¿›å…¥æ—¶çš„åˆå§‹åŒ–é€»è¾‘
+	virtual void on_update() {} //å¤„ç†æ•°æ®
+	virtual void on_draw() {} //æ¸²æŸ“ç»˜å›¾
+	virtual void on_input(const ExMessage& msg) {} //å¤„ç†ç©å®¶è¾“å…¥
+	virtual void on_exit() {} //åœºæ™¯é€€å‡ºæ—¶çš„å¸è½½é€»è¾‘
 
 private:
 	

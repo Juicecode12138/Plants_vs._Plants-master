@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 #include <graphics.h>
@@ -17,29 +17,29 @@ public:
 		TCHAR path_file[256];
 		for (int i = 0; i < num; i++) {
 			_stprintf_s(path_file, path_template, i + 1);
-			loadimage(&img_list[1],path_file);
+			loadimage(&img_list[i],path_file);
 		}
 	}
 
-	void clear()	//Çå¿ÕÍ¼¼¯ÖĞÒÑ¼ÓÔØµÄÍ¼Æ¬¶ÔÏó
+	void clear()	//æ¸…ç©ºå›¾é›†ä¸­å·²åŠ è½½çš„å›¾ç‰‡å¯¹è±¡
 	{
 		img_list.clear();
 	}
 
-	int get_size()	//»ñÈ¡Í¼¼¯ÖĞÍ¼Æ¬µÄÊıÁ¿
+	int get_size()	//è·å–å›¾é›†ä¸­å›¾ç‰‡çš„æ•°é‡
 	{
 		return (int)img_list.size();
 	}
 
-	IMAGE* get_image(int idx)	//ÖØÒª½Ó¿Ú Í¨¹ıÕâ¸ö·½·¨À´»ñÈ¡Êµ¼ÊäÖÈ¾µÄ¶¯»­Ö¡
+	IMAGE* get_image(int idx)	//é‡è¦æ¥å£ é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è·å–å®é™…æ¸²æŸ“çš„åŠ¨ç”»å¸§
 	{
 		if (idx < 0 || idx >= img_list.size())
-			return nullptr;//¼ì²éË÷Òı²ÎÊıÊÇ·ñÓĞĞ§£»Èç¹ûÔ½½çÔò·µ»Ø¿ÕÖ¸Õë£¬·ñÔò·µ»ØË÷ÒıÍ¼Æ¬¶ÔÏóµÄµØÖ·
+			return nullptr;//æ£€æŸ¥ç´¢å¼•å‚æ•°æ˜¯å¦æœ‰æ•ˆï¼›å¦‚æœè¶Šç•Œåˆ™è¿”å›ç©ºæŒ‡é’ˆï¼Œå¦åˆ™è¿”å›ç´¢å¼•å›¾ç‰‡å¯¹è±¡çš„åœ°å€
 
 		return &img_list[idx];
 	}
 
-	void add_image(const IMAGE& img)	//ÏòÍ¼¼¯ÖĞÌí¼ÓÒÑÓĞµÄÍ¼Æ¬¶ÔÏó
+	void add_image(const IMAGE& img)	//å‘å›¾é›†ä¸­æ·»åŠ å·²æœ‰çš„å›¾ç‰‡å¯¹è±¡
 	{
 		img_list.push_back(img);
 	}

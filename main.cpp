@@ -1,4 +1,4 @@
-#include "util.h"
+ï»¿#include "util.h"
 #include "atlas.h"
 #include "scene.h"
 #include "menu_scene.h"
@@ -10,74 +10,74 @@
 
 #pragma comment(lib,"Winmm.lib")
 
-IMAGE img_menu_background;							//Ö÷²Ëµ¥±³¾°Í¼Æ¬
+IMAGE img_menu_background;							//ä¸»èœå•èƒŒæ™¯å›¾ç‰‡
 
-IMAGE img_VS;										//VS ÒÕÊõ×ÖÍ¼Æ¬
-IMAGE img_1P;										//1P ÎÄ×ÖÍ¼Æ¬
-IMAGE img_2P;										//2P ÎÄ×ÖÍ¼Æ¬
-IMAGE img_1P_desc;									//1P ¼üÎ»ÃèÊöÍ¼Æ¬
-IMAGE img_2P_desc;									//2P ¼üÎ»ÃèÊöÍ¼Æ¬
-IMAGE img_gravestone_left;							//³¯Ïò×óµÄÄ¹±®ÕÕÆ¬
-IMAGE img_gravestone_right;							//³¯ÏòÓÒµÄÄ¹±®ÕÕÆ¬
-IMAGE img_selector_tip;								//Ñ¡½Ç½çÃæÌáÊ¾ĞÅÏ¢ÎÄ±¾Í¼Æ¬
-IMAGE img_selector_background;						//Ñ¡½Ç½çÃæ±³¾°Í¼Æ¬
-IMAGE img_1P_selector_btn_idle_left;				//1P Ïò×óÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_1P_selector_btn_idle_right;				//1P ÏòÓÒÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_1P_selector_btn_down_left;				//1P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-IMAGE img_1P_selector_btn_down_right;				//1P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_idle_left;				//2P Ïò×óÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_idle_right;				//2P ÏòÓÒÑ¡Ôñ°´Å¥Ä¬ÈÏ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_down_left;				//2P Ïò×óÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-IMAGE img_2P_selector_btn_down_right;				//2P ÏòÓÒÑ¡Ôñ°´Å¥°´ÏÂ×´Ì¬Í¼Æ¬
-IMAGE img_peashooter_selector_background_left;		//Ñ¡½Ç½çÃæ³¯Ïò×óµÄÍã¶¹ÉäÊÖ±³¾°Í¼Æ¬
-IMAGE img_peashooter_selector_background_right;		//Ñ¡½Ç½çÃæ³¯ÏòÓÒµÄÍã¶¹ÉäÊÖ±³¾°Í¼Æ¬
-IMAGE img_sunflower_selector_background_left;		//Ñ¡½Ç½çÃæ³¯Ïò×óµÄÁúÈÕ¿û±³¾°Í¼Æ¬
-IMAGE img_sunflower_selector_background_right;		//Ñ¡½Ç½çÃæ³¯ÏòÓÒµÄÁúÈÕ¿û±³¾°Í¼Æ¬
+IMAGE img_VS;										//VS è‰ºæœ¯å­—å›¾ç‰‡
+IMAGE img_1P;										//1P æ–‡å­—å›¾ç‰‡
+IMAGE img_2P;										//2P æ–‡å­—å›¾ç‰‡
+IMAGE img_1P_desc;									//1P é”®ä½æè¿°å›¾ç‰‡
+IMAGE img_2P_desc;									//2P é”®ä½æè¿°å›¾ç‰‡
+IMAGE img_gravestone_left;							//æœå‘å·¦çš„å¢“ç¢‘ç…§ç‰‡
+IMAGE img_gravestone_right;							//æœå‘å³çš„å¢“ç¢‘ç…§ç‰‡
+IMAGE img_selector_tip;								//é€‰è§’ç•Œé¢æç¤ºä¿¡æ¯æ–‡æœ¬å›¾ç‰‡
+IMAGE img_selector_background;						//é€‰è§’ç•Œé¢èƒŒæ™¯å›¾ç‰‡
+IMAGE img_1P_selector_btn_idle_left;				//1P å‘å·¦é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_1P_selector_btn_idle_right;				//1P å‘å³é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_1P_selector_btn_down_left;				//1P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+IMAGE img_1P_selector_btn_down_right;				//1P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_idle_left;				//2P å‘å·¦é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_idle_right;				//2P å‘å³é€‰æ‹©æŒ‰é’®é»˜è®¤çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_down_left;				//2P å‘å·¦é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+IMAGE img_2P_selector_btn_down_right;				//2P å‘å³é€‰æ‹©æŒ‰é’®æŒ‰ä¸‹çŠ¶æ€å›¾ç‰‡
+IMAGE img_peashooter_selector_background_left;		//é€‰è§’ç•Œé¢æœå‘å·¦çš„è±Œè±†å°„æ‰‹èƒŒæ™¯å›¾ç‰‡
+IMAGE img_peashooter_selector_background_right;		//é€‰è§’ç•Œé¢æœå‘å³çš„è±Œè±†å°„æ‰‹èƒŒæ™¯å›¾ç‰‡
+IMAGE img_sunflower_selector_background_left;		//é€‰è§’ç•Œé¢æœå‘å·¦çš„é¾™æ—¥è‘µèƒŒæ™¯å›¾ç‰‡
+IMAGE img_sunflower_selector_background_right;		//é€‰è§’ç•Œé¢æœå‘å³çš„é¾™æ—¥è‘µèƒŒæ™¯å›¾ç‰‡
 
-IMAGE img_sky;										//Ìì¿ÕÍ¼Æ¬
-IMAGE img_hills;									//É½ÂöÍ¼Æ¬
-IMAGE img_platform_large;							//´óĞÍÆ½Ì¨Í¼Æ¬
-IMAGE img_platform_small;							//Ğ¡ĞÍÆ½Ì¨Í¼Æ¬
+IMAGE img_sky;										//å¤©ç©ºå›¾ç‰‡
+IMAGE img_hills;									//å±±è„‰å›¾ç‰‡
+IMAGE img_platform_large;							//å¤§å‹å¹³å°å›¾ç‰‡
+IMAGE img_platform_small;							//å°å‹å¹³å°å›¾ç‰‡
 
-IMAGE img_1P_cursor;								//1P Ö¸Ê¾¹â±êÍ¼Æ¬
-IMAGE img_2P_cursor;								//2P Ö¸Ê¾¹â±êÍ¼Æ¬
+IMAGE img_1P_cursor;								//1P æŒ‡ç¤ºå…‰æ ‡å›¾ç‰‡
+IMAGE img_2P_cursor;								//2P æŒ‡ç¤ºå…‰æ ‡å›¾ç‰‡
 
-Atlas atlas_peashooter_idle_left;					//Íã¶¹ÉäÊÖ³¯Ïò×óµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_peashooter_idle_right;					//Íã¶¹ÉäÊÖ³¯ÏòÓÒµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_peashooter_run_left;					//Íã¶¹ÉäÊÖ³¯Ïò×óµÄ±¼ÅÜ¶¯»­Í¼¼¯
-Atlas atlas_peashooter_run_right;					//Íã¶¹ÉäÊÖ³¯ÏòÓÒµÄ±¼ÅÜ¶¯»­Í¼¼¯
-Atlas atlas_peashooter_attack_ex_left;				//Íã¶¹ÉäÊÖ³¯Ïò×óµÄÌØÊâ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_peashooter_attack_ex_right;				//Íã¶¹ÉäÊÖ³¯ÏòÓÒµÄÌØÊâ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_peashooter_die_left;					//Íã¶¹ÉäÊÖ³¯Ïò×óµÄËÀÍö¶¯»­Í¼¼¯
-Atlas atlas_peashooter_die_right;					//Íã¶¹ÉäÊÖ³¯ÏòÓÒµÄËÀÍö¶¯»­Í¼¼¯
+Atlas atlas_peashooter_idle_left;					//è±Œè±†å°„æ‰‹æœå‘å·¦çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_idle_right;					//è±Œè±†å°„æ‰‹æœå‘å³çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_run_left;					//è±Œè±†å°„æ‰‹æœå‘å·¦çš„å¥”è·‘åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_run_right;					//è±Œè±†å°„æ‰‹æœå‘å³çš„å¥”è·‘åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_attack_ex_left;				//è±Œè±†å°„æ‰‹æœå‘å·¦çš„ç‰¹æ®Šæ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_attack_ex_right;				//è±Œè±†å°„æ‰‹æœå‘å³çš„ç‰¹æ®Šæ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_die_left;					//è±Œè±†å°„æ‰‹æœå‘å·¦çš„æ­»äº¡åŠ¨ç”»å›¾é›†
+Atlas atlas_peashooter_die_right;					//è±Œè±†å°„æ‰‹æœå‘å³çš„æ­»äº¡åŠ¨ç”»å›¾é›†
 
-Atlas atlas_sunflower_idle_left;					//ÁúÈÕ¿û³¯Ïò×óµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_sunflower_idle_right;					//ÁúÈÕ¿û³¯ÏòÓÒµÄÄ¬ÈÏ¶¯»­Í¼¼¯
-Atlas atlas_sunflower_run_left;						//ÁúÈÕ¿û³¯Ïò×óµÄ±¼ÅÜ¶¯»­Í¼¼¯
-Atlas atlas_sunflower_run_right;					//ÁúÈÕ¿û³¯ÏòÓÒµÄ±¼ÅÜ¶¯»­Í¼¼¯
-Atlas atlas_sunflower_attack_ex_left;				//ÁúÈÕ¿û³¯Ïò×óµÄÌØÊâ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_sunflower_attack_ex_right;				//ÁúÈÕ¿û³¯ÏòÓÒµÄÌØÊâ¹¥»÷¶¯»­Í¼¼¯
-Atlas atlas_sunflower_die_left;						//ÁúÈÕ¿û³¯Ïò×óµÄËÀÍö¶¯»­Í¼¼¯
-Atlas atlas_sunflower_die_right;					//ÁúÈÕ¿û³¯ÏòÓÒµÄËÀÍö¶¯»­Í¼¼¯
+Atlas atlas_sunflower_idle_left;					//é¾™æ—¥è‘µæœå‘å·¦çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_idle_right;					//é¾™æ—¥è‘µæœå‘å³çš„é»˜è®¤åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_run_left;						//é¾™æ—¥è‘µæœå‘å·¦çš„å¥”è·‘åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_run_right;					//é¾™æ—¥è‘µæœå‘å³çš„å¥”è·‘åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_attack_ex_left;				//é¾™æ—¥è‘µæœå‘å·¦çš„ç‰¹æ®Šæ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_attack_ex_right;				//é¾™æ—¥è‘µæœå‘å³çš„ç‰¹æ®Šæ”»å‡»åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_die_left;						//é¾™æ—¥è‘µæœå‘å·¦çš„æ­»äº¡åŠ¨ç”»å›¾é›†
+Atlas atlas_sunflower_die_right;					//é¾™æ—¥è‘µæœå‘å³çš„æ­»äº¡åŠ¨ç”»å›¾é›†
 
-IMAGE img_pea;										//Íã¶¹Í¼Æ¬
-Atlas atlas_pea_break;								//Íã¶¹ÆÆËé¶¯»­Í¼¼¯
-Atlas atlas_sun;									//ÈÕ¹â¶¯»­Í¼¼¯
-Atlas atlas_sun_explode;							//ÈÕ¹â±¬Õ¨¶¯»­Í¼¼¯
-Atlas atlas_sun_ex;									//ÌØÊâÈÕ¹â¶¯»­Í¼¼¯
-Atlas atlas_sun_ex_explode;							//ÌØÊâÈÕ¹â±¬Õ¨¶¯»­Í¼¼¯
-Atlas atlas_sun_text;								//"ÈÕ"ÎÄ±¾¶¯»­Í¼¼¯
+IMAGE img_pea;										//è±Œè±†å›¾ç‰‡
+Atlas atlas_pea_break;								//è±Œè±†ç ´ç¢åŠ¨ç”»å›¾é›†
+Atlas atlas_sun;									//æ—¥å…‰åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_explode;							//æ—¥å…‰çˆ†ç‚¸åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_ex;									//ç‰¹æ®Šæ—¥å…‰åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_ex_explode;							//ç‰¹æ®Šæ—¥å…‰çˆ†ç‚¸åŠ¨ç”»å›¾é›†
+Atlas atlas_sun_text;								//"æ—¥"æ–‡æœ¬åŠ¨ç”»å›¾é›†
 
-Atlas atlas_run_effect;								//±¼ÅÜÌØĞ§¶¯»­Í¼¼¯
-Atlas atlas_jump_effect;							//ÌøÔ¾ÌØĞ§¶¯»­Í¼¼¯
-Atlas atlas_land_effect;							//ÂäµØÌØĞ§¶¯»­Í¼¼¯
+Atlas atlas_run_effect;								//å¥”è·‘ç‰¹æ•ˆåŠ¨ç”»å›¾é›†
+Atlas atlas_jump_effect;							//è·³è·ƒç‰¹æ•ˆåŠ¨ç”»å›¾é›†
+Atlas atlas_land_effect;							//è½åœ°ç‰¹æ•ˆåŠ¨ç”»å›¾é›†
 
-IMAGE img_1P_winnner;								//1P»ñÊ¤ÎÄ±¾Í¼Æ¬
-IMAGE img_2P_winnner;								//2P»ñÊ¤ÎÄ±¾Í¼Æ¬
-IMAGE img_winnner_bar;								//»ñÊ¤Íæ¼ÒÎÄ±¾±³¾°Í¼Æ¬
+IMAGE img_1P_winnner;								//1Pè·èƒœæ–‡æœ¬å›¾ç‰‡
+IMAGE img_2P_winnner;								//2Pè·èƒœæ–‡æœ¬å›¾ç‰‡
+IMAGE img_winnner_bar;								//è·èƒœç©å®¶æ–‡æœ¬èƒŒæ™¯å›¾ç‰‡
 
-IMAGE img_avator_peashooter;						//Íã¶¹ÉäÊÖÍ·ÏñÍ¼Æ¬
-IMAGE img_avator_sunflower;							//ÁúÈÕ¿ûÍ·ÏñÍ¼Æ¬
+IMAGE img_avator_peashooter;						//è±Œè±†å°„æ‰‹å¤´åƒå›¾ç‰‡
+IMAGE img_avator_sunflower;							//é¾™æ—¥è‘µå¤´åƒå›¾ç‰‡
 
 Scene* menu_scene = nullptr;
 Scene* game_scene = nullptr;
@@ -87,8 +87,8 @@ SceneManager scene_manager;
 
 void flip_atlas(Atlas& src, Atlas& dst) 
 {
-	dst.clear();//Çå¿ÕÄ¿±êÍ¼¼¯ÖĞÒÑÓĞµÄÍ¼Æ¬ÄÚÈİ
-	for (int i = 0; i < src.get_size(); i++) //¶ÔÔ­Í¼¼¯ÖĞµÄÃ¿Ò»Ö¡Í¼Æ¬¶¼Ö´ĞĞflip_image²Ù×÷
+	dst.clear();//æ¸…ç©ºç›®æ ‡å›¾é›†ä¸­å·²æœ‰çš„å›¾ç‰‡å†…å®¹
+	for (int i = 0; i < src.get_size(); i++) //å¯¹åŸå›¾é›†ä¸­çš„æ¯ä¸€å¸§å›¾ç‰‡éƒ½æ‰§è¡Œflip_imageæ“ä½œ
 	{
 		IMAGE img_flpipped;
 		flip_image(src.get_image(i), &img_flpipped);
@@ -98,9 +98,9 @@ void flip_atlas(Atlas& src, Atlas& dst)
 
 void load_game_resources() 
 {
-	AddFontResourceEx(_T("resources/IPix.ttf"),FR_PRIVATE,NULL);  //¼ÓÔØÓÎÏ·×ÖÌå(ÏñËØ×ÖÌå)
+	AddFontResourceEx(_T("resources/IPix.ttf"),FR_PRIVATE,NULL);  //åŠ è½½æ¸¸æˆå­—ä½“(åƒç´ å­—ä½“)
 
-	//¼ÓÔØ²¢´¦ÀíÓÎÏ·ËØ²Ä
+	//åŠ è½½å¹¶å¤„ç†æ¸¸æˆç´ æ
 	loadimage(&img_menu_background,_T("resource/menu_background.png"));
 
 	loadimage(&img_VS, _T("resources/VS.png"));
@@ -132,20 +132,20 @@ void load_game_resources()
 	atlas_peashooter_idle_right.load_from_file(_T("resources/peashooter_idle_%d.png"), 9);
 	flip_atlas(atlas_peashooter_idle_right, atlas_peashooter_idle_left); 
 	atlas_peashooter_run_right.load_from_file(_T("resources/peashooter_run_%d.png"), 5);
-	//flip_atlas(atlas_peashooter_run_right, atlas_peashooter_run_left);
+	flip_atlas(atlas_peashooter_run_right, atlas_peashooter_run_left);
 	atlas_peashooter_attack_ex_right.load_from_file(_T("resources/peashooter_attack_ex_%d.png"), 3);
-	//flip_atlas(atlas_peashooter_attack_ex_right, atlas_peashooter_attack_ex_left);
+	flip_atlas(atlas_peashooter_attack_ex_right, atlas_peashooter_attack_ex_left);
 	atlas_peashooter_die_right.load_from_file(_T("resources/peashooter_die_%d.png"), 4);
-	//flip_atlas(atlas_peashooter_die_right, atlas_peashooter_die_left);
+	flip_atlas(atlas_peashooter_die_right, atlas_peashooter_die_left);
 
 	atlas_sunflower_idle_right.load_from_file(_T("resources/sunflower_idle_%d.png"), 8);
-	//flip_atlas(atlas_sunflower_idle_right, atlas_sunflower_idle_left);
+	flip_atlas(atlas_sunflower_idle_right, atlas_sunflower_idle_left);
 	atlas_sunflower_run_right.load_from_file(_T("resources/sunflower_run_%d.png"), 5);
-	//flip_atlas(atlas_sunflower_run_right, atlas_sunflower_run_left);
+	flip_atlas(atlas_sunflower_run_right, atlas_sunflower_run_left);
 	atlas_sunflower_attack_ex_right.load_from_file(_T("resources/sunflower_attack_ex_%d.png"), 9);
-	//flip_atlas(atlas_sunflower_attack_ex_right, atlas_sunflower_attack_ex_left);
+	flip_atlas(atlas_sunflower_attack_ex_right, atlas_sunflower_attack_ex_left);
 	atlas_sunflower_die_right.load_from_file(_T("resources/sunflower_die_%d.png"), 2);
-	//flip_atlas(atlas_sunflower_die_right, atlas_sunflower_die_left);
+	flip_atlas(atlas_sunflower_die_right, atlas_sunflower_die_left);
 
 	loadimage(&img_pea, _T("resources/pea.png"));
 	atlas_pea_break.load_from_file(_T("resources/pea_break_%d. png"), 3);
@@ -166,7 +166,7 @@ void load_game_resources()
 	loadimage(&img_avator_peashooter, _T("resources/avatar_peashooter.png"));
 	loadimage(&img_avator_sunflower, _T("resources/avatar_sunflower.png"));
 
-	//¼ÓÔØÒôÀÖÒôĞ§
+	//åŠ è½½éŸ³ä¹éŸ³æ•ˆ
 	mciSendString(_T("open resources/bgm_game.mp3 alias bgm_game"), NULL, 0, NULL);
 	mciSendString(_T("open resources/bgm_menu.mp3 alias bgm_menu"), NULL, 0, NULL);
 	mciSendString(_T("open resources/pea_break_1.mp3 alias pea_break_1"), NULL, 0, NULL);

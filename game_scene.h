@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "scene.h"
 #include "scene_manager.h"
@@ -15,18 +15,18 @@ public:
 
 	virtual void on_enter()
 	{
-		cout << "½øÈëÓÎÏ·¾ÖÄÚ³¡¾°" << endl;
-	} //³¡¾°½øÈëÊ±µÄ³õÊ¼»¯Âß¼­
+		cout << "è¿›å…¥æ¸¸æˆå±€å†…åœºæ™¯" << endl;
+	} //åœºæ™¯è¿›å…¥æ—¶çš„åˆå§‹åŒ–é€»è¾‘
 
 	virtual void on_update()
 	{
-		cout << "ÓÎÏ·ÕýÔÚÔËÐÐ¡­" << endl;
-	}//´¦ÀíÊý¾Ý
+		cout << "æ¸¸æˆæ­£åœ¨è¿è¡Œâ€¦" << endl;
+	}//å¤„ç†æ•°æ®
 
 	virtual void on_draw()
 	{
-		outtextxy(10, 10, _T("ÓÎÏ·¾ÖÄÚ»æÍ¼ÄÚÈÝ"));
-	} //äÖÈ¾»æÍ¼
+		outtextxy(10, 10, _T("æ¸¸æˆå±€å†…ç»˜å›¾å†…å®¹"));
+	} //æ¸²æŸ“ç»˜å›¾
 
 	virtual void on_input(const ExMessage& msg) 
 	{
@@ -34,11 +34,11 @@ public:
 		{
 			scene_manager.switch_to(SceneManager::SceneType::Menu);
 		}
-	}//´¦ÀíÍæ¼ÒÊäÈë
+	}//å¤„ç†çŽ©å®¶è¾“å…¥
 
-	virtual void on_exit()  //³¡¾°ÍË³öÊ±µÄÐ¶ÔØÂß¼­
+	virtual void on_exit()  //åœºæ™¯é€€å‡ºæ—¶çš„å¸è½½é€»è¾‘
 	{
-		cout << "ÓÎÏ·¾ÖÄÚÍË³ö" << endl;
+		cout << "é€€å‡ºæ¸¸æˆâ€¦" << endl;
 	}
 private:
 
