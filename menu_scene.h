@@ -2,6 +2,7 @@
 
 #include "scene.h"
 #include "atlas.h"
+#include "timer.h"
 #include "camera.h"
 #include "animation.h"
 #include "scene_manager.h"
@@ -31,10 +32,19 @@ public:
 				scene_manager.switch_to(SceneManager::SceneType::Game);
 			}//lambda匿名函数
 		);
+
+		timer.set_wait_time(1000);
+		timer.set_one_shot(false);
+		timer.set_callback([]()
+			{
+				cout << "Shot!" << endl;
+			});
+		
 	} //场景进入时的初始化逻辑
 
 	virtual void on_update(int delta) 
 	{
+		timer.on_update(delta);
 		camera.on_update(delta);
 		animation_peashooter_run_right.on_update(delta);
 	}//处理数据
@@ -48,7 +58,7 @@ public:
 	virtual void on_input(const ExMessage& msg) 
 	{
 		if (msg.message == WM_KEYDOWN) {
-			scene_manager.switch_to(SceneManager::SceneType::Game);
+			camera.shake(10, 350);
 		}
 	}//处理玩家输入
 	
@@ -57,6 +67,7 @@ public:
 		cout << "退出主菜单" << endl;
 	}
 private:
+	Timer timer;
 	Camera camera;
 	Animation animation_peashooter_run_right;
 };
