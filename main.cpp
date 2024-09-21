@@ -83,6 +83,7 @@ Scene* menu_scene = nullptr;
 Scene* game_scene = nullptr;
 Scene* selector_scene = nullptr;
 
+Camera main_camera;
 SceneManager scene_manager;
 
 void flip_atlas(Atlas& src, Atlas& dst) 
@@ -101,7 +102,7 @@ void load_game_resources()
 	AddFontResourceEx(_T("resources/IPix.ttf"),FR_PRIVATE,NULL);  //加载游戏字体(像素字体)
 
 	//加载并处理游戏素材
-	loadimage(&img_menu_background,_T("resource/menu_background.png"));
+	loadimage(&img_menu_background,_T("resources/menu_background.png"));
 
 	loadimage(&img_VS, _T("resources/VS.png"));
 	loadimage(&img_1P, _T("resources/1P.png"));
@@ -172,9 +173,15 @@ void load_game_resources()
 	mciSendString(_T("open resources/pea_break_1.mp3 alias pea_break_1"), NULL, 0, NULL);
 	mciSendString(_T("open resources/pea_break_2.mp3 alias pea_break_2"), NULL, 0, NULL);
 	mciSendString(_T("open resources/pea_break_3.mp3 alias pea_break_3"), NULL, 0, NULL);
-	mciSendString(_T("open resources/pea_shoot_1.mp3 alias pea_shoot_1"), NULL, 8, NULL);
+	mciSendString(_T("open resources/pea_shoot_1.mp3 alias pea_shoot_1"), NULL, 0, NULL);
 	mciSendString(_T("open resources/pea_shoot_2.mp3 alias pea_shoot_2"), NULL, 0, NULL);
 	mciSendString(_T("open resources/pea_shoot_ex.mp3 alias pea_shoot_ex"), NULL, 0, NULL);
+	mciSendString(_T("open resources/sun_explode.mp3 alias sun_explode"), NULL, 0, NULL);
+	mciSendString(_T("open resources/sun_explode_ex.mp3 alias sun_explode_ex"), NULL, 0, NULL);
+	mciSendString(_T("open resources/sun_text.mp3 alias sun_text"), NULL, 0, NULL);
+	mciSendString(_T("open resources/ui_confirm.wav alias ui_confirm"), NULL, 0, NULL);
+	mciSendString(_T("open resources/ui_switch.wav alias ui_switch"), NULL, 0, NULL);
+	mciSendString(_T("open resources/ui_win.wav alias ui_win"), NULL, 0, NULL);
 }
 
 int main() 
@@ -208,7 +215,7 @@ int main()
 		last_tick_time = current_tick_time;
 
 		cleardevice();
-		scene_manager.on_draw();
+		scene_manager.on_draw(main_camera);
 		FlushBatchDraw();
 
 		DWORD frame_end_time = GetTickCount();
