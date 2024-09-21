@@ -1,11 +1,17 @@
 ﻿#pragma once
 
 #include "scene.h"
+#include "atlas.h"
+#include "camera.h"
+#include "animation.h"
 #include "scene_manager.h"
 
 #include <iostream>
 
+extern Atlas atlas_peashooter_run_right;
+
 extern SceneManager scene_manager;
+
 using namespace std;
 
 class MenuScene:public Scene
@@ -16,17 +22,27 @@ public:
 
 	virtual void on_enter() 
 	{
-		cout << "进入主菜单" << endl;
+		animation_peashooter_run_right.set_atlas(&atlas_peashooter_run_right);
+		animation_peashooter_run_right.set_interval(75);
+		animation_peashooter_run_right.set_loop(true);
+		animation_peashooter_run_right.set_callback(
+			[]()
+			{
+				scene_manager.switch_to(SceneManager::SceneType::Game);
+			}//lambda匿名函数
+		);
 	} //场景进入时的初始化逻辑
 
-	virtual void on_update() 
+	virtual void on_update(int delta) 
 	{
-		cout << "主菜单正在运行…" << endl;
+		camera.on_update(delta);
+		animation_peashooter_run_right.on_update(delta);
 	}//处理数据
 
 	virtual void on_draw() 
 	{
-		outtextxy(10, 10, _T("主菜单绘图内容"));
+		const Vector2& pos_camera = camera.get_position();
+		animation_peashooter_run_right.on_draw((int)(100 - pos_camera.x), (int)(100 - pos_camera.y));
 	} //渲染绘图
 
 	virtual void on_input(const ExMessage& msg) 
@@ -41,5 +57,6 @@ public:
 		cout << "退出主菜单" << endl;
 	}
 private:
-	
+	Camera camera;
+	Animation animation_peashooter_run_right;
 };

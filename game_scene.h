@@ -18,7 +18,7 @@ public:
 		cout << "进入游戏局内场景" << endl;
 	} //场景进入时的初始化逻辑
 
-	virtual void on_update()
+	virtual void on_update(int delta)
 	{
 		cout << "游戏正在运行…" << endl;
 	}//处理数据
